@@ -1,1 +1,7 @@
-<h1>Hello world</h1>
+<h1>Tweets</h1>
+
+<% @tweets.each do |tweet| %>
+    <div>
+        <p><%= tweet.message %></p>
+    </div>
+<% end %>
