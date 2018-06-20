@@ -1,0 +1,128 @@
+$lightBlue: #2BBED8;
+$darkGray: #66757f;
+$darkBlue: #26a0ef;
+$black: #14171a;
+$backgroundColor: #e6ecf0;
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: $black;
+    letter-spacing: 1px;
+    background-color: $backgroundColor;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.wrapper-wide {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.wrapper-800 {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#top-nav {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+
+    #top-nav-left {
+        float: left;
+        width: 50%;
+
+        #home-button {
+            display: inline-block;
+            color: $darkGray;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 5px;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+
+            &:visited {
+                color: $darkGray;
+                text-decoration: none;
+            }
+
+            &:hover {
+                padding: 5px 5px 3px 5px;
+                border-bottom: 2px solid $lightBlue;
+            }
+
+            &.active {
+                color: $lightBlue;
+            }
+
+            i {
+                font-size: 30px;
+                vertical-align: middle;
+            }
+        }
+
+        #top-nav-center {
+            float: right;
+
+            #logo {
+                display: inline-block;
+                color: $darkBlue;
+                font-size: 20px;
+                padding: 11px 0;
+            }
+        }
+    }
+
+    #top-nav-right {
+        float: right;
+        ul {
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: inline-block;
+
+                #profile-pic {
+                    width: 32px;
+                    height: 32px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    border-radius: 32px;
+                    margin: 5.5px 0;
+                    float: left;
+                }
+                
+                #tweet-button {
+                    float: right;
+                    font-weight: 600;
+                    text-decoration: none;
+                    background-color: lighten($lightBlue, 10%);
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 14px;
+                    padding: 9px 14px;
+                    border-radius: 100px;
+                    transition: all 0.2s ease-in-out;
+                    margin: 3.5px 0 3.5px 20px;
+                    
+
+                    &:hover {
+                        background-color: $lightBlue;
+                    }
+                }
+            }   
+        }
+    }
+}
+
+@import 'normalize';

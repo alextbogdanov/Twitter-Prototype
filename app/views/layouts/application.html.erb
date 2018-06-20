@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Twitter</title>
-    <%= csrf_meta_tags %>
+<head>
+	<title>Twitter</title>
+	<%= csrf_meta_tags %>	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+	<div id="top-nav" class="clearfix">
+		<div class="wrapper-wide">
+			<div id="top-nav-left">
+				<a href="#" id="home-button" class="active">
+					<i><ion-icon name="home"></ion-icon></i> Home
+				</a>
+				<div id="top-nav-center">
+					<a href="#" id="logo">
+						<ion-icon name="logo-twitter"></ion-icon>
+					</a>
+				</div>
+			</div>
+			<div id="top-nav-right">
+				<ul>
+					<li>
+						<a href="#">
+							<div id="profile-pic" style="background-image: url('https://d1qq9lwf5ow8iz.cloudfront.net/live-images-1/ImageDetail_c2d90cef-6562-4a67-ae77-6235c6929154_Medium')"></div>
+						</a>
+					</li><li>
+						<a href="#" id="tweet-button">Tweet</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+    </div>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+	<%= yield %>
 
-  <body>
-    <%= yield %>
-  </body>
+	<script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
+</body>
 </html>
