@@ -1,15 +1,21 @@
 class TweetsController < ApplicationController
     before_action :find_tweet, only: [:show, :edit, :update]
+    before_action :authenticate_user!, except: [:index, :show]
+
     def index
         @tweets = Tweet.all.order("created_at DESC")
     end
 
     def new
-        @tweet = Tweet.new
+        @tweet = current_user.tweets.build
+        # if devise not installed use:
+        # Tweet.new
     end
 
     def create
-        @tweet = Tweet.new(tweet_params)
+        @tweet = current_user.tweets.build
+        # if devise not installed use:
+        # Tweet.new(tweet_params)
         if @tweet.save
             redirect_to @tweet
         else
@@ -18,11 +24,9 @@ class TweetsController < ApplicationController
     end
 
     def show
-
     end
 
     def edit
-
     end
 
     def update
